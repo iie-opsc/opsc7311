@@ -21,6 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textSize="30sp"
-        android:text="TextView" />
+        android:text="@string/order_now_label" />
 
 </LinearLayout>
