@@ -3,6 +3,7 @@ package za.ac.iie.opsc.starsucks;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,5 +26,26 @@ public class MainActivity extends AppCompatActivity {
         img_Sb4 = findViewById(R.id.img_sb4);
         img_Sb5 = findViewById(R.id.img_sb5);
         img_Sb6 = findViewById(R.id.img_sb6);
+
+        img_Sb1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
