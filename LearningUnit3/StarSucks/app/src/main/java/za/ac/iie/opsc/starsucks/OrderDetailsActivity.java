@@ -3,6 +3,7 @@ package za.ac.iie.opsc.starsucks;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,5 +59,12 @@ public class OrderDetailsActivity extends AppCompatActivity {
                 imgOrderedBeverage.setImageResource(R.drawable.sb6);
                 break;
         }
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentHelper.shareIntent(OrderDetailsActivity.this, orderedValue);
+            }
+        });
     }
 }
