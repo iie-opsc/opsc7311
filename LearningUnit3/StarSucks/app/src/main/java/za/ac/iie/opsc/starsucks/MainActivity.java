@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()) {
             case R.id.nav_photo:
-                // TODO: navigate to the activity when it exists
+                IntentHelper.openIntent(this, "", CoffeeSnapsActivity.class);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
