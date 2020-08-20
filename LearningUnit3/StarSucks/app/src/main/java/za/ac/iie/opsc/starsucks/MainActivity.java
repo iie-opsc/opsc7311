@@ -1,5 +1,6 @@
 package za.ac.iie.opsc.starsucks;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,12 +9,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import com.google.android.material.navigation.NavigationView;
 
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,
+        NavigationView.OnNavigationItemSelectedListener {
+    
     // declare fields for the ImageViews
     private ImageView img_Sb1;
     private ImageView img_Sb2;
@@ -97,6 +102,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 order.getProductName(), Toast.LENGTH_SHORT).show();
         IntentHelper.openIntent(this,
                 order.getProductName(), OrderDetailsActivity.class);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.nav_photo:
+                // TODO: navigate to the activity when it exists
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        // returning true marks the item as selected
+        return true;
     }
 }
 
