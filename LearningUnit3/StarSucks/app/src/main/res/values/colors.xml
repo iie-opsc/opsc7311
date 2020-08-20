@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="starsucksGreen">#00704A</color>
+    <color name="starsucksRed">#F0154C</color>
 </resources>
