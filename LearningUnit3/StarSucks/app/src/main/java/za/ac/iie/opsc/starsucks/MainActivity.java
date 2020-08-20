@@ -1,6 +1,9 @@
 package za.ac.iie.opsc.starsucks;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +20,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView img_Sb5;
     private ImageView img_Sb6;
     private Order order;
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle toggleOnOff;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_with_nav_drawer);
+
+        toolbar = findViewById(R.id.nav_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        toggleOnOff = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggleOnOff);
+        toggleOnOff.syncState();
+
+        order = new Order();
+
+        img_Sb1 = findViewById(R.id.img_sb1);
+        img_Sb2 = findViewById(R.id.img_sb2);
+        img_Sb3 = findViewById(R.id.img_sb3);
+        img_Sb4 = findViewById(R.id.img_sb4);
+        img_Sb5 = findViewById(R.id.img_sb5);
+        img_Sb6 = findViewById(R.id.img_sb6);
+
+        img_Sb1.setOnClickListener(this);
+        img_Sb2.setOnClickListener(this);
+        img_Sb3.setOnClickListener(this);
+        img_Sb4.setOnClickListener(this);
+        img_Sb5.setOnClickListener(this);
+        img_Sb6.setOnClickListener(this);
+    }
 
     @Override
     public void onClick(View v) {
@@ -45,28 +84,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 order.getProductName(), Toast.LENGTH_SHORT).show();
         IntentHelper.openIntent(this,
                 order.getProductName(), OrderDetailsActivity.class);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_with_nav_drawer);
-
-        order = new Order();
-
-        img_Sb1 = findViewById(R.id.img_sb1);
-        img_Sb2 = findViewById(R.id.img_sb2);
-        img_Sb3 = findViewById(R.id.img_sb3);
-        img_Sb4 = findViewById(R.id.img_sb4);
-        img_Sb5 = findViewById(R.id.img_sb5);
-        img_Sb6 = findViewById(R.id.img_sb6);
-
-        img_Sb1.setOnClickListener(this);
-        img_Sb2.setOnClickListener(this);
-        img_Sb3.setOnClickListener(this);
-        img_Sb4.setOnClickListener(this);
-        img_Sb5.setOnClickListener(this);
-        img_Sb6.setOnClickListener(this);
     }
 }
 
