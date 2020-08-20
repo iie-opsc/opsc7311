@@ -16,36 +16,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView img_Sb4;
     private ImageView img_Sb5;
     private ImageView img_Sb6;
+    private Order order;
 
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
             case R.id.img_sb1:
-                Toast.makeText(MainActivity.this, "MMM Soy Latte", Toast.LENGTH_SHORT).show();
+                order.setProductName("Soy Latte");
                 break;
             case R.id.img_sb2:
-                Toast.makeText(MainActivity.this, "MMM Chocco Frapp", Toast.LENGTH_SHORT).show();
+                order.setProductName("Chocco Frappe");
                 break;
             case R.id.img_sb3:
-                Toast.makeText(MainActivity.this, "MMM Bottled Americano", Toast.LENGTH_SHORT).show();
+                order.setProductName("Bottled Americano");
                 break;
             case R.id.img_sb4:
-                Toast.makeText(MainActivity.this, "MMM Rainbow Frapp", Toast.LENGTH_SHORT).show();
+                order.setProductName("Rainbow Frapp");
                 break;
             case R.id.img_sb5:
-                Toast.makeText(MainActivity.this, "MMM Caramel Frapp", Toast.LENGTH_SHORT).show();
+                order.setProductName("Caramel Frapp");
                 break;
             case R.id.img_sb6:
-                Toast.makeText(MainActivity.this, "MMM Black Forest Frapp", Toast.LENGTH_SHORT).show();
+                order.setProductName("Black Forest Frapp");
                 break;
         }
+        Toast.makeText(MainActivity.this, "MMM " +
+                order.getProductName(), Toast.LENGTH_SHORT).show();
+        IntentHelper.openIntent(this,
+                order.getProductName(), OrderDetailsActivity.class);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        order = new Order();
+
         img_Sb1 = findViewById(R.id.img_sb1);
         img_Sb2 = findViewById(R.id.img_sb2);
         img_Sb3 = findViewById(R.id.img_sb3);
