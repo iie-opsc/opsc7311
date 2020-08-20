@@ -18,7 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,
         NavigationView.OnNavigationItemSelectedListener {
-    
+
     // declare fields for the ImageViews
     private ImageView img_Sb1;
     private ImageView img_Sb2;
@@ -30,17 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggleOnOff;
-
-    @Override
-    public void onBackPressed() {
-        // if the drawer is open, close it
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            // otherwise, let the super class handle it
-            super.onBackPressed();
-        }
-    }
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drawerLayout.addDrawerListener(toggleOnOff);
         toggleOnOff.syncState();
 
+        navigationView = findViewById(R.id.nav_view);
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
+
         order = new Order();
 
         img_Sb1 = findViewById(R.id.img_sb1);
@@ -73,6 +67,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         img_Sb4.setOnClickListener(this);
         img_Sb5.setOnClickListener(this);
         img_Sb6.setOnClickListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // if the drawer is open, close it
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            // otherwise, let the super class handle it
+            super.onBackPressed();
+        }
     }
 
     @Override
