@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView img_Sb4;
     private ImageView img_Sb5;
     private ImageView img_Sb6;
+    private Order order;
 
     @Override
     public void onClick(View v) {
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        order = new Order();
+
         img_Sb1 = findViewById(R.id.img_sb1);
         img_Sb2 = findViewById(R.id.img_sb2);
         img_Sb3 = findViewById(R.id.img_sb3);
