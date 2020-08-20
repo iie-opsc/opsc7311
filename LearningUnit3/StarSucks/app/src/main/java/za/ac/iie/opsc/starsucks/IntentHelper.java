@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 public class IntentHelper {
 
-    public static void openIntent(Context context, String order, Class passTo) {
+    public void openIntent(Context context, String order, Class passTo) {
         // declare intent with context and class to pass the value to
         Intent i = new Intent(context, passTo);
 
@@ -17,7 +17,7 @@ public class IntentHelper {
         context.startActivity(i);
     }
 
-    public static void shareIntent(Context context, String order) {
+    public void shareIntent(Context context, String order) {
         Intent sendIntent = new Intent();
         // set the action to indicate what to do - send in this case
         sendIntent.setAction(Intent.ACTION_SEND);
@@ -30,7 +30,7 @@ public class IntentHelper {
     }
 
 
-    public static void shareIntent(Context context, String productName,
+    public void shareIntent(Context context, String productName,
                             String customerName, String customerCell) {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
