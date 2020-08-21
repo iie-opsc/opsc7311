@@ -56,4 +56,11 @@ public class Order {
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
+
+    @Override
+    public String toString() {
+        return "Customer Name: " + customerName + '\n' +
+               "Product Name: " + productName + '\n' +
+               "Order Date: " + orderDate + '\n';
+    }
 }
