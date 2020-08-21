@@ -18,6 +18,8 @@ public class OrderDetailsActivity extends AppCompatActivity {
     private String orderedValue;
     private ImageView imgOrderedBeverage;
     private FloatingActionButton fab;
+    private FloatingActionButton fabCalendar;
+    private FloatingActionButton fabCloud;
     private Order order;
 
     @Override
@@ -28,6 +30,8 @@ public class OrderDetailsActivity extends AppCompatActivity {
         // initialise the fields
         order = new Order();
         fab = findViewById(R.id.fab_order);
+        fabCalendar = findViewById(R.id.fab_calendar);
+        fabCloud = findViewById(R.id.fab_cloud);
         placedOrder = findViewById(R.id.tv_placedOrder);
         etCustomerName = findViewById(R.id.et_customerName);
         etCustomerCell = findViewById(R.id.et_customerCell);
