@@ -44,6 +44,7 @@ public class OrderHistoryActivity extends AppCompatActivity {
                 // create the adapter to display the items
                 orderAdapter = new ArrayAdapter<String>(OrderHistoryActivity.this,
                         android.R.layout.simple_list_item_1, orderList);
+                lstvOrderHistory.setAdapter(orderAdapter);
             }
 
             @Override
