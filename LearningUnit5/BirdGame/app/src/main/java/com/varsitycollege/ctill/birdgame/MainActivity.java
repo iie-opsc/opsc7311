@@ -9,7 +9,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    private GameView gameView;
+    private BirdieGameView birdieGameView;
 
     // Manage data between UI thread and program
     private Handler handler = new Handler();
@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        gameView = new GameView(this);
+        birdieGameView = new BirdieGameView(this);
         super.onCreate(savedInstanceState);
-        setContentView(gameView);
+        setContentView(birdieGameView);
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        gameView.invalidate();
+                        birdieGameView.invalidate();
                     }
                 });
             }

@@ -19,7 +19,7 @@ import android.widget.Toast;
  * @author Sarina Till
  * @version v0.1
  */
-public class GameView extends View {
+public class BirdieGameView extends View {
     // ___________________________________Bitmaps_______________________________________________
     //______________________________________BIRD__________________________________________________
     //getting bird to flap wings (cheating)
@@ -62,7 +62,7 @@ public class GameView extends View {
     //setting score:
     private int setScore;
 
-    public GameView(Context context) {
+    public BirdieGameView(Context context) {
         super(context);
 
         //__________________________________ Preparing on Screen text & Ball____________________________
